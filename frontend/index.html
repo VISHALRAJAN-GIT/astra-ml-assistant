@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra Nexus - AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/astra_styles.css?v=5.1">
+    <link rel="stylesheet" href="/static/astra_sidebar.css?v=5.1">
+    <link rel="stylesheet" href="/static/light_theme.css?v=5.1">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <!-- Ultra-Advanced Splash Screen -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="starfield" id="starfield"></div>
+        <div class="splash-container">
+            <div class="quantum-particles" id="quantum-particles"></div>
+            
+            <div class="astra-core-wrapper">
+                <div class="core-layers">
+                    <div class="layer layer-1"></div>
+                    <div class="layer layer-2"></div>
+                    <div class="layer layer-3"></div>
+                </div>
+                <svg class="astra-core-svg" viewBox="0 0 200 200">
+                    <defs>
+                        <linearGradient id="core-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#5C2EDE;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#492CDD;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow-heavy">
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    
+                    <!-- HUD Elements -->
+                    <circle class="hud-ring ring-outer" cx="100" cy="100" r="90" />
+                    <circle class="hud-ring ring-middle" cx="100" cy="100" r="75" stroke-dasharray="120 60" />
+                    <circle class="hud-ring ring-inner" cx="100" cy="100" r="60" stroke-dasharray="10 20" />
+                    
+                    <!-- Data Streams -->
+                    <path class="data-stream stream-1" d="M100 10 A90 90 0 0 1 190 100" />
+                    <path class="data-stream stream-2" d="M100 190 A90 90 0 0 1 10 100" />
+                    
+                    <!-- Core Symbol (Advanced "A") -->
+                    <path class="astra-logo-path" d="M100 40 L150 160 L130 160 L100 80 L70 160 L50 160 Z" filter="url(#glow-heavy)" />
+                    <path class="astra-logo-accent" d="M75 120 L125 120" filter="url(#glow-heavy)" />
+                </svg>
+                <div class="core-glow-pulse"></div>
+            </div>
+            
+            <div class="astra-info">
+                <h1 class="astra-title-glitch" data-text="ASTRA ML ASSISTANT">ASTRA ML ASSISTANT</h1>
+                <div class="loading-context">
+                    <div class="progress-arc-container">
+                        <svg class="progress-svg" viewBox="0 0 100 100">
+                            <circle class="progress-bg" cx="50" cy="50" r="45" />
+                            <circle class="progress-fill" cx="50" cy="50" r="45" />
+                        </svg>
+                    </div>
+                    <p class="splash-status" id="splash-status">Initializing Neural Nexus...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="astra-bg">
+        <div class="particles"></div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="astra-app">
+        <!-- Floating Header -->
+        <header class="astra-header">
+            <div class="header-left">
+                <button class="header-icon-btn" id="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="ai-name">ASTRA</h1>
+                <span class="status-badge" id="ai-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Active</span>
+                </span>
+            </div>
+
+            <div class="header-center">
+                <div class="mode-switcher">
+                    <button class="mode-btn active" data-mode="assistant">
+                        <i class="fas fa-robot"></i>
+                        <span>Assistant</span>
+                    </button>
+                    <button class="mode-btn" data-mode="coder">
+                        <i class="fas fa-code"></i>
+                        <span>Coder</span>
+                    </button>
+                    <button class="mode-btn" data-mode="analyst">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Analyst</span>
+                    </button>
+                    <button class="mode-btn" data-mode="creative">
+                        <i class="fas fa-palette"></i>
+                        <span>Creative</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <select id="language-select" class="header-select">
+                    <option value="en">🇺🇸 English</option>
+                    <option value="es">🇪🇸 Spanish</option>
+                    <option value="fr">🇫🇷 French</option>
+                    <option value="de">🇩🇪 German</option>
+                    <option value="hi">🇮🇳 Hindi</option>
+                    <option value="zh-CN">🇨🇳 Chinese</option>
+                    <option value="ja">🇯🇵 Japanese</option>
+                    <option value="ar">🇸🇦 Arabic</option>
+                    <option value="ta">🇮🇳 Tamil</option>
+                    <option value="ru">🇷🇺 Russian</option>
+                    <option value="pt">🇵🇹 Portuguese</option>
+                    <option value="it">🇮🇹 Italian</option>
+                    <option value="ko">🇰🇷 Korean</option>
+                </select>
+                <button class="header-icon-btn" id="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- 2-Panel Layout -->
+        <div class="astra-panels">
+            <!-- Left Sidebar -->
+            <aside class="left-panel">
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-user-circle"></i>
+                        Profile
+                    </h3>
+                    <div class="user-card">
+                        <div class="user-avatar" id="user-avatar-initials">AI</div>
+                        <div class="user-info">
+                            <p class="user-name" id="display-user-name">ML Enthusiast</p>
+                            <p class="user-level">Level 5 • Expert</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-chart-pie"></i>
+                        Analytics
+                    </h3>
+                    <div class="analytics-card">
+                        <div class="stat">
+                            <span class="stat-value" id="msg-count">0</span>
+                            <span class="stat-label">Messages</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="code-runs">0</span>
+                            <span class="stat-label">Code Runs</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value sentiment-emoji" id="mood-emoji">😊</span>
+                            <span class="stat-label">Mood</span>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Analytics -->
+                    <div class="advanced-analytics">
+                        <div class="analytics-item">
+                            <span class="stat-label">Intent Distribution</span>
+                            <div class="intent-bars" id="intent-distribution">
+                                <!-- Bars injected here -->
+                            </div>
+                        </div>
+                        <div class="analytics-item">
+                            <span class="stat-label">Emotion Trends</span>
+                            <div class="emotion-chart" id="emotion-trends">
+                                <!-- Chart/Dots injected here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-history"></i>
+                        Recent Projects
+                    </h3>
+                    <div class="project-list" id="project-list">
+                        <!-- Projects injected here -->
+                    </div>
+                    <button class="new-project-btn" id="new-chat-btn">
+                        <i class="fas fa-plus"></i>
+                        New Project
+                    </button>
+                </div>
+
+                <div class="panel-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-lightbulb"></i>
+                        Smart Suggestions
+                    </h3>
+                    <div class="suggestion-list">
+                        <button class="suggestion-chip" data-prompt="Explain how transformers work">
+                            <i class="fas fa-brain"></i>
+                            Explain Transformers
+                        </button>
+                        <button class="suggestion-chip" data-prompt="Debug this Python code">
+                            <i class="fas fa-bug"></i>
+                            Debug Code
+                        </button>
+                        <button class="suggestion-chip" data-prompt="Build a CNN classifier">
+                            <i class="fas fa-network-wired"></i>
+                            Build CNN
+                        </button>
+                        <button class="suggestion-chip" data-prompt="Analyze this dataset">
+                            <i class="fas fa-table"></i>
+                            Analyze Data
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <p class="credits">Created by <strong>vishhalrajan.v</strong> & <strong>johnfrancies.t</strong></p>
+                    <p class="version">v3.0 Astra Edition</p>
+                </div>
+            </aside>
+
+            <!-- Main Chat Window -->
+            <main class="center-panel">
+                <div class="chat-container" id="chat-container">
+                    <!-- Messages injected here -->
+                </div>
+
+                <div class="typing-indicator hidden" id="typing-indicator">
+                    <div class="typing-wave">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text">Astra is thinking...</span>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-zone">
+                    <div class="input-wrapper">
+                        <button class="input-icon-btn" id="attach-btn" title="Upload File">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="input-icon-btn" id="voice-btn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+
+                        <textarea id="user-input" placeholder="Ask Astra anything about AI, ML, code, or data..."
+                            rows="3"></textarea>
+
+                        <button class="input-icon-btn" id="emoji-btn" title="Emoji">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <button class="send-btn" id="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="astra-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> Settings</h2>
+                <button class="close-modal" id="close-settings"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-group">
+                    <h3>Voice Settings</h3>
+                    <div class="setting-item">
+                        <span>Auto-Speak Responses</span>
+                        <label class="switch">
+                            <input type="checkbox" id="voice-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Voice Gender</span>
+                        <div class="gender-switch">
+                            <span>Male</span>
+                            <label class="switch">
+                                <input type="checkbox" id="gender-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Female</span>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <span>Active Voice</span>
+                        <span id="active-voice-name" class="voice-name">Detecting...</span>
+                    </div>
+                    <button class="test-voice-btn" id="test-voice-btn">
+                        <i class="fas fa-play"></i> Test Voice
+                    </button>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Theme Selection</h3>
+                    <div class="theme-grid">
+                        <button class="theme-btn" id="theme-neon">
+                            <i class="fas fa-bolt"></i>
+                            <span>Neon</span>
+                        </button>
+                        <button class="theme-btn" id="theme-light">
+                            <i class="fas fa-sun"></i>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-btn" id="theme-dark">
+                            <i class="fas fa-moon"></i>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <h3>Language</h3>
+                    <div class="setting-item">
+                        <p class="settings-hint">Use the selector in the header to change language.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="/static/voice.js?v=5.1"></script>
+    <script src="/static/astra_script.js?v=5.1"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

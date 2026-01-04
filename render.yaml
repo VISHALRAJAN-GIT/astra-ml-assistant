@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: astra-ml-assistant
+    env: docker
+    plan: free
+    region: ohio
+    envVars:
+      - key: PERPLEXITY_API_KEY
+        sync: false # Set this in the Render Dashboard
+      - key: PORT
+        value: 8000
+    healthCheckPath: /
+    autoDeploy: true

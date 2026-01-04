@@ -1,0 +1,47 @@
+/* Sidebar Toggle Functionality */
+.left-panel {
+    transition: transform 0.3s ease, width 0.3s ease, opacity 0.3s ease;
+}
+
+.left-panel.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: none;
+    margin-right: 0;
+}
+
+/* Adjust grid when sidebar is collapsed */
+.astra-panels.sidebar-hidden {
+    grid-template-columns: 0 1fr 320px;
+}
+
+@media (max-width: 1200px) {
+    .astra-panels.sidebar-hidden {
+        grid-template-columns: 0 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .astra-panels.sidebar-hidden {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile specific: Sidebar overlaps content when open */
+    .left-panel {
+        position: fixed;
+        top: 80px;
+        /* Below header */
+        left: 0;
+        height: calc(100vh - 100px);
+        z-index: 100;
+        width: 280px;
+        transform: translateX(-100%);
+    }
+
+    .left-panel.mobile-open {
+        transform: translateX(10px);
+        display: flex;
+    }
+}

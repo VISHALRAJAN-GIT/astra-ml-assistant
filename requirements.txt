@@ -1,0 +1,26 @@
+# Core Framework
+fastapi
+uvicorn[standard]
+httpx
+python-dotenv
+pydantic
+
+# NLU & Text Processing
+textblob>=0.17.0
+fuzzywuzzy[speedup]>=0.18.0
+python-Levenshtein>=0.23.0
+
+# Translation (free Google Translate wrapper)
+deep-translator>=1.11.0
+
+# WebSocket for real-time voice
+websockets>=12.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Security
+cryptography>=41.0.0
+
+# Additional utilities
+python-multipart

@@ -1,0 +1,318 @@
+/* Comprehensive Light Theme Styles for Astra Nexus */
+
+.theme-light {
+    --bg-dark: #f0f4f8;
+    --bg-glass: rgba(255, 255, 255, 0.95);
+    --bg-glass-hover: rgba(255, 255, 255, 1);
+    --border-glass: 1px solid rgba(0, 0, 0, 0.1);
+    --neon-blue: #0284c7;
+    --neon-violet: #7c3aed;
+    color: #1f2937;
+}
+
+/* Background */
+.theme-light .astra-bg {
+    background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+}
+
+.theme-light .gradient-orb {
+    opacity: 0.15;
+}
+
+/* Header */
+.theme-light .astra-header {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.theme-light .ai-name {
+    color: #0284c7;
+    text-shadow: none;
+}
+
+.theme-light .status-text {
+    color: #374151;
+}
+
+.theme-light .status-dot {
+    background: #0284c7 !important;
+}
+
+/* Panels */
+.theme-light .left-panel,
+.theme-light .center-panel {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Sidebar Text */
+.theme-light .section-title {
+    color: #374151;
+}
+
+.theme-light .user-name,
+.theme-light .stat-label {
+    color: #4b5563;
+}
+
+.theme-light .user-level {
+    color: #6b7280;
+}
+
+.theme-light .stat-value {
+    color: #0284c7;
+}
+
+.theme-light .credits,
+.theme-light .version {
+    color: #6b7280;
+}
+
+/* Messages */
+.theme-light .message.ai .msg-bubble {
+    background: #f3f4f6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1f2937;
+}
+
+.theme-light .message.user .msg-bubble {
+    background: linear-gradient(135deg, #0284c7, #7c3aed);
+    color: white;
+}
+
+.theme-light .msg-content {
+    color: #1f2937;
+}
+
+.theme-light .message.user .msg-content {
+    color: white;
+}
+
+.theme-light .msg-avatar {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Input Area */
+.theme-light .input-wrapper {
+    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light #user-input {
+    color: #1f2937;
+}
+
+.theme-light #user-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Buttons */
+.theme-light .header-icon-btn {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #374151;
+}
+
+.theme-light .header-icon-btn:hover {
+    background: rgba(0, 0, 0, 0.08) !important;
+    border-color: #0284c7 !important;
+    color: #0284c7;
+}
+
+.theme-light .mode-btn {
+    background: rgba(0, 0, 0, 0.03) !important;
+    color: #4b5563;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.theme-light .mode-btn:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    color: #1f2937;
+}
+
+.theme-light .mode-btn.active {
+    background: linear-gradient(135deg, #0284c7, #7c3aed) !important;
+    color: white !important;
+    border: 1px solid transparent !important;
+}
+
+/* Suggestion Chips */
+.theme-light .suggestion-chip {
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    color: #374151;
+}
+
+.theme-light .suggestion-chip:hover {
+    background: #f3f4f6 !important;
+    border-color: #0284c7 !important;
+    color: #0284c7;
+}
+
+/* Project Items */
+.theme-light .project-item {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.theme-light .project-item:hover {
+    background: #f9fafb;
+}
+
+/* Analytics */
+.theme-light .analytics-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.theme-light .intent-bar-fill {
+    background: linear-gradient(90deg, #0284c7, #7c3aed);
+}
+
+.theme-light .intent-label {
+    color: #4b5563;
+}
+
+/* Settings Modal */
+.theme-light .modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.theme-light .astra-modal {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .modal-header h2 {
+    color: #1f2937;
+}
+
+.theme-light .settings-group h3 {
+    color: #374151;
+}
+
+.theme-light .setting-item span {
+    color: #4b5563;
+}
+
+.theme-light .theme-btn {
+    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: #374151;
+}
+
+.theme-light .theme-btn:hover {
+    border-color: #0284c7;
+    color: #0284c7;
+}
+
+.theme-light .theme-btn.active {
+    background: linear-gradient(135deg, #0284c7, #7c3aed);
+    color: white;
+    border-color: transparent;
+}
+
+/* Typing Indicator */
+.theme-light .typing-indicator {
+    background: #f3f4f6;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .typing-text {
+    color: #6b7280;
+}
+
+/* Code Blocks */
+.theme-light pre {
+    background: #1f2937 !important;
+}
+
+.theme-light code {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+/* Scrollbar */
+.theme-light ::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Input Focus */
+.theme-light .input-wrapper:focus-within {
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1) !important;
+    border-color: #0284c7 !important;
+}
+
+/* Language Select */
+.theme-light .header-select {
+    background: white;
+    color: #374151;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .header-select:hover {
+    border-color: #0284c7;
+}
+
+/* New Project Button */
+.theme-light .new-project-btn {
+    background: linear-gradient(90deg, #0284c7, #7c3aed, #0284c7) !important;
+}
+
+/* Send Button */
+.theme-light .send-btn {
+    background: linear-gradient(135deg, #0284c7, #7c3aed) !important;
+}
+
+/* Voice Controls */
+.theme-light .voice-label,
+.theme-light .voice-name {
+    color: #4b5563;
+}
+
+.theme-light .test-voice-btn {
+    background: white;
+    color: #0284c7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-light .test-voice-btn:hover {
+    background: #f3f4f6;
+    border-color: #0284c7;
+}
+
+/* Gender Toggle */
+.theme-light .gender-label {
+    color: #4b5563;
+}
+
+/* Switch/Toggle */
+.theme-light .slider {
+    background-color: #d1d5db;
+}
+
+.theme-light input:checked+.slider {
+    background-color: #0284c7;
+}
+
+/* Close Modal Button */
+.theme-light .close-modal {
+    color: #6b7280;
+}
+
+.theme-light .close-modal:hover {
+    color: #1f2937;
+}
