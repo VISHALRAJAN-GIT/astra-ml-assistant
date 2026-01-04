@@ -145,28 +145,28 @@ function initAstra() {
 
         container.appendChild(p);
     }
-        function createFallingStar(container) {
+    function createFallingStar(container) {
         const star = document.createElement('div');
         star.className = 'falling-star';
-        
+
         // Random start position (top-right quadrant)
         const startX = Math.random() * window.innerWidth + 500;
         const startY = Math.random() * -300;
-        
+
         const travelDist = 1000 + Math.random() * 500;
         const endX = startX - travelDist;
         const endY = startY + travelDist;
-        
+
         star.style.setProperty('--start-x', `${startX}px`);
         star.style.setProperty('--start-y', `${startY}px`);
         star.style.setProperty('--end-x', `${endX}px`);
         star.style.setProperty('--end-y', `${endY}px`);
-        
+
         const duration = 0.6 + Math.random() * 0.8; // Fast zip
         const delay = Math.random() * 8;
-        
+
         star.style.animation = `shooting-star-realistic ${duration}s ease-out ${delay}s infinite`;
-        
+
         container.appendChild(star);
     }
 
@@ -202,6 +202,8 @@ function initAstra() {
         const astraPanels = document.querySelector('.astra-panels');
 
         if (sidebarToggle) {
+            const mobileOverlay = document.getElementById('mobile-overlay');
+
             sidebarToggle.addEventListener('click', () => {
                 // Desktop behavior
                 if (window.innerWidth > 768) {
@@ -211,12 +213,16 @@ function initAstra() {
                 // Mobile behavior
                 else {
                     leftPanel.classList.toggle('mobile-open');
-                    // Ensure it's visible for animation
-                    if (leftPanel.classList.contains('mobile-open')) {
-                        leftPanel.style.display = 'flex';
-                    }
+                    if (mobileOverlay) mobileOverlay.classList.toggle('active');
                 }
             });
+
+            if (mobileOverlay) {
+                mobileOverlay.addEventListener('click', () => {
+                    leftPanel.classList.remove('mobile-open');
+                    mobileOverlay.classList.remove('active');
+                });
+            }
         }
 
         // Send message

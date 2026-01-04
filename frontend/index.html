@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/static/astra_styles.css?v=5.1">
     <link rel="stylesheet" href="/static/astra_sidebar.css?v=5.1">
     <link rel="stylesheet" href="/static/light_theme.css?v=5.1">
+    <link rel="stylesheet" href="/static/responsive.css?v=5.1">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <link rel="stylesheet"
@@ -26,7 +28,7 @@
         <div class="starfield" id="starfield"></div>
         <div class="splash-container">
             <div class="quantum-particles" id="quantum-particles"></div>
-            
+
             <div class="astra-core-wrapper">
                 <div class="core-layers">
                     <div class="layer layer-1"></div>
@@ -40,30 +42,31 @@
                             <stop offset="100%" style="stop-color:#492CDD;stop-opacity:1" />
                         </linearGradient>
                         <filter id="glow-heavy">
-                            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+                            <feGaussianBlur stdDeviation="5" result="coloredBlur" />
                             <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
+                                <feMergeNode in="coloredBlur" />
+                                <feMergeNode in="SourceGraphic" />
                             </feMerge>
                         </filter>
                     </defs>
-                    
+
                     <!-- HUD Elements -->
                     <circle class="hud-ring ring-outer" cx="100" cy="100" r="90" />
                     <circle class="hud-ring ring-middle" cx="100" cy="100" r="75" stroke-dasharray="120 60" />
                     <circle class="hud-ring ring-inner" cx="100" cy="100" r="60" stroke-dasharray="10 20" />
-                    
+
                     <!-- Data Streams -->
                     <path class="data-stream stream-1" d="M100 10 A90 90 0 0 1 190 100" />
                     <path class="data-stream stream-2" d="M100 190 A90 90 0 0 1 10 100" />
-                    
+
                     <!-- Core Symbol (Advanced "A") -->
-                    <path class="astra-logo-path" d="M100 40 L150 160 L130 160 L100 80 L70 160 L50 160 Z" filter="url(#glow-heavy)" />
+                    <path class="astra-logo-path" d="M100 40 L150 160 L130 160 L100 80 L70 160 L50 160 Z"
+                        filter="url(#glow-heavy)" />
                     <path class="astra-logo-accent" d="M75 120 L125 120" filter="url(#glow-heavy)" />
                 </svg>
                 <div class="core-glow-pulse"></div>
             </div>
-            
+
             <div class="astra-info">
                 <h1 class="astra-title-glitch" data-text="ASTRA ML ASSISTANT">ASTRA ML ASSISTANT</h1>
                 <div class="loading-context">
@@ -349,7 +352,11 @@
         </div>
     </div>
 
+    <!-- Mobile Sidebar Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
     <!-- Scripts -->
+
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>

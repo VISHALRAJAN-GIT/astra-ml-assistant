@@ -1,0 +1,164 @@
+/* ===========================================
+   ASTRA NEXUS - Responsive Design System
+   Mobile & Tablet Optimizations
+   =========================================== */
+
+/* Tablet & Mobile (up to 1024px) */
+@media (max-width: 1024px) {
+    .astra-panels {
+        grid-template-columns: 300px 1fr;
+        gap: 15px;
+    }
+}
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+    .astra-app {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    /* Header Optimizations */
+    .astra-header {
+        padding: 10px 15px;
+        border-radius: 15px;
+    }
+
+    .ai-name {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .header-center {
+        display: none;
+        /* Hide mode switcher on very small headers, or we can make it scrollable */
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .header-select {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        max-width: 100px;
+    }
+
+    /* Panels Layout */
+    .astra-panels {
+        grid-template-columns: 1fr;
+        position: relative;
+    }
+
+    /* Sidebar as Drawer */
+    .left-panel {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 2000;
+        border-radius: 0 20px 20px 0;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .left-panel.mobile-open {
+        left: 0;
+    }
+
+    /* Center Panel Full Width */
+    .center-panel {
+        border-radius: 15px;
+    }
+
+    .chat-container {
+        padding: 15px;
+    }
+
+    /* Message Bubbles */
+    .msg-bubble {
+        max-width: 90%;
+        padding: 12px 15px;
+    }
+
+    /* Input Zone */
+    .input-zone {
+        padding: 15px;
+    }
+
+    .input-wrapper {
+        padding: 8px 12px;
+        gap: 5px;
+    }
+
+    #user-input {
+        font-size: 0.9rem;
+        min-height: 60px;
+    }
+
+    .input-icon-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .send-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Splash Screen Mobile */
+    .astra-core-svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .astra-title-glitch {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+    }
+
+    .splash-status {
+        font-size: 0.7rem;
+    }
+}
+
+/* Extra Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .header-right .header-select {
+        display: none;
+        /* Hide language selector on tiny screens, move to sidebar or settings */
+    }
+
+    .status-badge {
+        display: none;
+    }
+
+    .ai-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .avatar-core {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Sidebar Overlay for Mobile */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1999;
+}
+
+.mobile-overlay.active {
+    display: block;
+}
