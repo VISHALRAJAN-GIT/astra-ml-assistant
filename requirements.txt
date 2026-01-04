@@ -25,3 +25,4 @@ cryptography>=41.0.0
 # Additional utilities
 python-multipart
 duckduckgo-search
+nltk
