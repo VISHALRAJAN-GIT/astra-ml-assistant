@@ -40,7 +40,9 @@ body {
     background: #0a0a1a;
     color: white;
     overflow: hidden;
+    height: 100dvh;
     height: 100vh;
+    /* Fallback */
 }
 
 /* ===== Animated Background ===== */
@@ -247,8 +249,8 @@ body {
     font-weight: 800;
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-violet));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing: 2px;
 }
 
@@ -970,6 +972,7 @@ body {
     font-size: 1.5rem;
     background: linear-gradient(90deg, var(--neon-blue), var(--neon-violet));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1812,10 +1815,12 @@ input:checked+.slider:before {
         transform: translate(var(--start-x), var(--start-y)) rotate(135deg) scaleX(0);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
-        scaleX(1.2);
+        transform: translate(var(--start-x), var(--start-y)) rotate(135deg) scaleX(1.2);
     }
+
     100% {
         transform: translate(var(--end-x), var(--end-y)) rotate(135deg) scaleX(0.5);
         opacity: 0;

@@ -14,14 +14,19 @@
 /* Mobile (up to 768px) */
 @media (max-width: 768px) {
     .astra-app {
-        padding: 10px;
-        gap: 10px;
+        padding: 8px;
+        gap: 8px;
+        height: 100dvh;
+        /* Use dynamic viewport height */
+        display: flex;
+        flex-direction: column;
     }
 
     /* Header Optimizations */
     .astra-header {
         padding: 10px 15px;
         border-radius: 15px;
+        flex-shrink: 0;
     }
 
     .ai-name {
@@ -31,23 +36,29 @@
 
     .header-center {
         display: none;
-        /* Hide mode switcher on very small headers, or we can make it scrollable */
     }
 
     .header-right {
         gap: 8px;
+        display: flex;
+        align-items: center;
     }
 
     .header-select {
-        padding: 8px 12px;
-        font-size: 0.8rem;
-        max-width: 100px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        max-width: 90px;
+        background: rgba(255, 255, 255, 0.05);
     }
 
     /* Panels Layout */
     .astra-panels {
         grid-template-columns: 1fr;
         position: relative;
+        flex: 1;
+        height: calc(100% - 70px);
+        /* Adjust based on header height */
+        overflow: hidden;
     }
 
     /* Sidebar as Drawer */
@@ -71,10 +82,14 @@
     /* Center Panel Full Width */
     .center-panel {
         border-radius: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
     }
 
     .chat-container {
         padding: 15px;
+        flex: 1;
     }
 
     /* Message Bubbles */
@@ -85,7 +100,8 @@
 
     /* Input Zone */
     .input-zone {
-        padding: 15px;
+        padding: 10px 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .input-wrapper {
@@ -95,7 +111,8 @@
 
     #user-input {
         font-size: 0.9rem;
-        min-height: 60px;
+        min-height: 45px;
+        max-height: 120px;
     }
 
     .input-icon-btn {
@@ -127,8 +144,10 @@
 /* Extra Small Mobile (up to 480px) */
 @media (max-width: 480px) {
     .header-right .header-select {
-        display: none;
-        /* Hide language selector on tiny screens, move to sidebar or settings */
+        display: block;
+        max-width: 80px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
     }
 
     .status-badge {
